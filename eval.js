@@ -1,6 +1,5 @@
 // eval.js — YOU edit this file (Task 3 and Task 4). Run: node eval.js
-// Same idea as the Measuring Retrieval assignment: loop over the queries,
-// compute MRR and Recall, print them.
+// Loop over the queries, compute MRR and Recall, print them.
 const { RESULTS } = require("./data.js");
 const { reciprocalRank } = require("./search.js");
 
