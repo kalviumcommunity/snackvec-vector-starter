@@ -1,2 +1,2 @@
 # SnackVec — M5 starter
-Edit only `search.js`. Run `npm test` (needs Node 18+; no `npm install` required).
+Edit only `search.js`. Run `npm test` (Node 18+; no `npm install`, no keys).

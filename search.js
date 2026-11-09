@@ -1,45 +1,37 @@
-// search.js — YOU edit this file. Finish the 5 functions marked TODO.
+// search.js — YOU edit this file. Finish the 4 functions marked TODO.
 // Plain JavaScript only. No packages, no API keys, no database needed.
-import { DOCS } from "./data.js";
 
 // ---------- Task 1 ----------
-// Cosine similarity of two equal-length number arrays.
-//   cos(a, b) = (a · b) / (|a| × |b|)
-//   a · b = sum of a[i] * b[i]      |a| = sqrt(sum of a[i]²)
-// Return a Number (1 = same direction, 0 = unrelated).
+// Cosine similarity of two equal-length number arrays (same as the lesson):
+//   dot(a, b) = sum of a[i] * b[i]
+//   norm(a)   = Math.sqrt(dot(a, a))
+//   cosine    = dot(a, b) / (norm(a) * norm(b))
 export function cosineSimilarity(a, b) {
   // TODO
 }
 
 // ---------- Task 2 ----------
-// Brute-force K nearest neighbours.
-// Score EVERY doc in DOCS against queryVec using cosineSimilarity,
-// sort highest score first, keep the first k.
-// Return an array of doc ids, e.g. ["d1", "d2"].
-export function topK(queryVec, k) {
+// Reciprocal Rank for ONE query.
+// `ranked` = array of ids, best first. `correctId` = the right answer.
+// Return 1 / rank of correctId (rank starts at 1): 1st -> 1, 2nd -> 0.5, 3rd -> 0.3333
+// If correctId is not in `ranked` -> return 0.
+export function reciprocalRank(ranked, correctId) {
   // TODO
 }
 
 // ---------- Task 3 ----------
-// Filtered search: same as topK, but ONLY consider docs whose
-// category === category. Filter first, then score, sort and take k.
-// Return an array of doc ids.
-export function filteredSearch(queryVec, k, category) {
-  // TODO
-}
-
-// ---------- Task 4 ----------
-// Evaluation. `ranked` is an array of ids a search returned, best first.
-//
-// recallAtK(ranked, correctId, k)
-//   -> 1 if correctId is in the first k items of `ranked`, else 0.
+// Recall@k for ONE query.
+// Return 1 if correctId is within the first k items of `ranked`, else 0.
 export function recallAtK(ranked, correctId, k) {
   // TODO
 }
 
-// reciprocalRank(ranked, correctId)
-//   -> 1 / position of correctId (position starts at 1).
-//      1st -> 1, 2nd -> 0.5, 3rd -> 0.333...   Not found -> 0.
-export function reciprocalRank(ranked, correctId) {
+// ---------- Task 4 ----------
+// Evaluate a whole result set (the RESULTS array in data.js).
+// For every item, use reciprocalRank and recallAtK, then AVERAGE them.
+// Return an object: { mrr, recall }
+//   mrr    = average of the reciprocal ranks
+//   recall = average of the recall@k values
+export function evaluate(results, k) {
   // TODO
 }
