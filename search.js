@@ -1,4 +1,4 @@
-// search.js — YOU edit this file. Finish the 4 functions marked TODO.
+// search.js — YOU edit this file (Task 1 and Task 2).
 // Plain JavaScript only. No packages, no API keys, no database needed.
 
 // ---------- Task 1 ----------
@@ -11,27 +11,11 @@ export function cosineSimilarity(a, b) {
 }
 
 // ---------- Task 2 ----------
-// Reciprocal Rank for ONE query.
-// `ranked` = array of ids, best first. `correctId` = the right answer.
-// Return 1 / rank of correctId (rank starts at 1): 1st -> 1, 2nd -> 0.5, 3rd -> 0.3333
-// If correctId is not in `ranked` -> return 0.
-export function reciprocalRank(ranked, correctId) {
-  // TODO
-}
-
-// ---------- Task 3 ----------
-// Recall@k for ONE query.
-// Return 1 if correctId is within the first k items of `ranked`, else 0.
-export function recallAtK(ranked, correctId, k) {
-  // TODO
-}
-
-// ---------- Task 4 ----------
-// Evaluate a whole result set (the RESULTS array in data.js).
-// For every item, use reciprocalRank and recallAtK, then AVERAGE them.
-// Return an object: { mrr, recall }
-//   mrr    = average of the reciprocal ranks
-//   recall = average of the recall@k values
-export function evaluate(results, k) {
+// Reciprocal Rank for ONE query (same as the Measuring Retrieval lesson).
+// `rankedIds` = ids, best first. `correctIds` = array of right answers.
+// Find the rank of the FIRST correct id (rank starts at 1) and return 1 / rank.
+//   1st -> 1, 2nd -> 0.5, 3rd -> 0.3333
+// If none of the correct ids appear -> return 0.
+export function reciprocalRank(rankedIds, correctIds) {
   // TODO
 }
