@@ -1,6 +1,6 @@
 // test.js — GIVEN, do not edit. Run with: npm test
-import { execFileSync } from "node:child_process";
-import { cosineSimilarity, reciprocalRank } from "./search.js";
+const { execFileSync } = require("child_process");
+const { cosineSimilarity, reciprocalRank } = require("./search.js");
 
 let passed = 0, failed = 0;
 function check(name, actual, expected) {

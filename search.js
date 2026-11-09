@@ -6,7 +6,7 @@
 //   dot(a, b) = sum of a[i] * b[i]
 //   norm(a)   = Math.sqrt(dot(a, a))
 //   cosine    = dot(a, b) / (norm(a) * norm(b))
-export function cosineSimilarity(a, b) {
+function cosineSimilarity(a, b) {
   // TODO
 }
 
@@ -16,6 +16,8 @@ export function cosineSimilarity(a, b) {
 // Find the rank of the FIRST correct id (rank starts at 1) and return 1 / rank.
 //   1st -> 1, 2nd -> 0.5, 3rd -> 0.3333
 // If none of the correct ids appear -> return 0.
-export function reciprocalRank(rankedIds, correctIds) {
+function reciprocalRank(rankedIds, correctIds) {
   // TODO
 }
+
+module.exports = { cosineSimilarity, reciprocalRank };
